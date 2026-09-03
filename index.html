@@ -784,8 +784,15 @@ gadgets.config.init({"core.io":{"jsonProxyUrl":"//%host%/gadgets/makeRequest","p
         </div>
 
 <script>gadgets.util.runOnLoadHandlers();</script><script>window.google.csi.tickDl();
-</script><script>
-  localStorage.setItem('coins', '5000');
-  localStorage.setItem('totm_coins', '5000');
+</script>
+<script>
+  // Força o reset de moedas direto na inicialização da Unity v1.0.1
+  (function() {
+      try {
+          localStorage.clear(); // Limpa caches antigos do Cookie Clicker
+          localStorage.setItem('coins', '6551');
+          localStorage.setItem('totm_coins', '6551');
+      } catch(e){}
+  })();
 </script>
 </body></html>
